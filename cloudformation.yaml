@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 
-Description: Cloud Student Hub Test and Production Infrastructure
+Description: Cloud Student Hub website infrastructure
 
 Parameters:
 
@@ -13,17 +13,16 @@ Parameters:
 
     Description: Deployment environment
 
-
 Resources:
 
   WebsiteBucket:
-
     Type: AWS::S3::Bucket
 
     Properties:
 
       WebsiteConfiguration:
         IndexDocument: index.html
+        ErrorDocument: index.html
 
       Tags:
 
@@ -34,10 +33,46 @@ Resources:
           Value: CloudStudentHub
 
 
+  WebsiteBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+
+    Properties:
+
+      Bucket: !Ref WebsiteBucket
+
+      PolicyDocument:
+
+        Version: '2012-10-17'
+
+        Statement:
+
+          - Sid: PublicRead
+
+            Effect: Allow
+
+            Principal: '*'
+
+            Action:
+              - s3:GetObject
+
+            Resource:
+              - !Sub '${WebsiteBucket.Arn}/*'
+
+
 Outputs:
 
   BucketName:
 
-    Description: S3 bucket used for the website
+    Description: Website S3 bucket name
 
     Value: !Ref WebsiteBucket
+
+
+  WebsiteURL:
+
+    Description: Website URL
+
+    Value:
+      Fn::GetAtt:
+        - WebsiteBucket
+        - WebsiteURL
