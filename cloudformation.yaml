@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: Cloud Student Hub Test and Production Infrastructure
+
+Parameters:
+
+  Environment:
+    Type: String
+
+    AllowedValues:
+      - Test
+      - Production
+
+    Description: Deployment environment
+
+
+Resources:
+
+  WebsiteBucket:
+
+    Type: AWS::S3::Bucket
+
+    Properties:
+
+      WebsiteConfiguration:
+        IndexDocument: index.html
+
+      Tags:
+
+        - Key: Environment
+          Value: !Ref Environment
+
+        - Key: Project
+          Value: CloudStudentHub
+
+
+Outputs:
+
+  BucketName:
+
+    Description: S3 bucket used for the website
+
+    Value: !Ref WebsiteBucket
