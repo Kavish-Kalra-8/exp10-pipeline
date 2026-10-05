@@ -20,6 +20,13 @@ Resources:
 
     Properties:
 
+      PublicAccessBlockConfiguration:
+
+        BlockPublicAcls: false
+        IgnorePublicAcls: false
+        BlockPublicPolicy: false
+        RestrictPublicBuckets: false
+
       WebsiteConfiguration:
         IndexDocument: index.html
         ErrorDocument: index.html
