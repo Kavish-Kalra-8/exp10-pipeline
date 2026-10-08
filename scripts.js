@@ -1,1 +1,3 @@
+```javascript
 console.log("Cloud Student Hub Version 1.0 loaded");
+```
