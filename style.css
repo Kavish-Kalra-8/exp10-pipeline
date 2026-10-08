@@ -1,52 +1,137 @@
-```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
+    background: #f4f6f8;
     color: #222;
 }
 
 header {
-    background-color: #333;
+    background: #2563eb;
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 35px;
 }
 
 header h1 {
-    margin: 0;
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
-header p {
-    margin: 8px 0 0;
+.version {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: white;
+    color: #2563eb;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+nav {
+    background: #111827;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
     font-weight: bold;
 }
 
 main {
     width: 80%;
-    max-width: 700px;
-    margin: 30px auto;
+    max-width: 1000px;
+    margin: 40px auto;
 }
 
 section {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 10px;
 }
 
 section h2 {
-    margin-top: 0;
+    margin-bottom: 15px;
 }
 
-li {
-    margin: 8px 0;
+.course-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.course {
+    flex: 1;
+    min-width: 220px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.course h3 {
+    margin-bottom: 10px;
+}
+
+.feature-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    flex: 1;
+    min-width: 220px;
+    padding: 20px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+}
+
+.progress-box {
+    margin-top: 25px;
+    padding: 25px;
+    text-align: center;
+    background: #f9fafb;
+    border-radius: 8px;
+}
+
+.progress-box h3 {
+    margin-bottom: 10px;
+}
+
+.progress-box p {
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
 }
 
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
-    padding: 15px;
+    background: #1f2937;
+    color: white;
+    padding: 20px;
 }
-```
